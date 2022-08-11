@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GetTransaction">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RV_get_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BUTTON"/>
+
+<!--    <ListView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/BUTTON"-->
+<!--        android:id="@+id/RV_get_show"/>-->
+
+    <ImageView
+        android:id="@+id/IV_query_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:id="@+id/TV_Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IV_query_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Query"
+        android:textColor="@color/purple_500"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/BUTTON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sortByRadioGroup"
+        android:layout_centerHorizontal="true"
+        android:text="Filter" />
+
+
+    <RadioGroup
+        android:id="@+id/sortByRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TV_Filter"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By ID"
+            android:checked="true"
+            android:id="@+id/RB_byID"/>
+
+        <EditText
+            android:id="@+id/ET_Get_specificID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RB_byID"
+            android:hint="Specific ID"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:visibility="visible" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Date"
+            android:id="@+id/RB_byDate"
+            android:layout_toRightOf="@id/RB_byID"/>
+
+        <EditText
+            android:id="@+id/ET_After"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/RB_byDate"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="5dp"
+            android:hint="After"
+            android:inputType="date"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/ET_Before"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:hint="Before"
+            android:inputType="date"
+            android:visibility="gone"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/ET_After"
+            android:layout_below="@id/RB_byDate"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Amount"
+            android:id="@+id/RB_byAmount"
+            android:layout_toRightOf="@id/RB_byDate"/>
+
+        <EditText
+            android:id="@+id/ET_moreThan"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/RB_byDate"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Min"
+            android:inputType="number"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/ET_lessThan"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:hint="Max"
+            android:inputType="number"
+            android:visibility="gone"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/ET_moreThan"
+            android:layout_below="@id/RB_byAmount"/>
+
+
+    </RadioGroup>
+
+
+
+
+</RelativeLayout>
